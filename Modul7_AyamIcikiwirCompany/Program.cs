@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Modul7_AyamIcikiwirCompany;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        FilmFavorit_103022400059.ReadJSON();
+    }
+}
