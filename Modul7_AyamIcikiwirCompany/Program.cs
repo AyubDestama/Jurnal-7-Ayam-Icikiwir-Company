@@ -26,11 +26,42 @@ class FilmFavorit_103022400103()
     }
 }
 
+class Watchlist_103022400103()
+{
+    public string watchlistName { get; set; }
+    public string createdBy { get; set; }
+    public List<Movie> movies { get; set; }
+
+    public class Movie
+    {
+        public string title { get; set; }
+        public string id { get; set; }
+        public int year { get; set; }
+        public string genre { get; set; }
+        public double rating { get; set; }
+    }
+
+    public static void ReadJson()
+    {
+        string jsonString = File.ReadAllText("jurnal7_2_103022400103.json");
+        var data = JsonSerializer.Deserialize<Watchlist_103022400103>(jsonString);
+        Console.WriteLine($"Watchlist Name : {data.watchlistName}");
+        Console.WriteLine($"Created By : {data.createdBy}");
+        Console.WriteLine("Movies :");
+        foreach (var movie in data.movies)
+        {
+            Console.WriteLine($"{movie.id} {movie.title} ({movie.year} - {movie.rating})");
+        }
+    }
+}
+
 class Program
 {
     static void Main(string[] args)
     {
         FilmFavorit_103022400103.ReadJson();
-
+        Console.WriteLine();
+        Watchlist_103022400103.ReadJson();
+        Console.WriteLine();
     }
 }
