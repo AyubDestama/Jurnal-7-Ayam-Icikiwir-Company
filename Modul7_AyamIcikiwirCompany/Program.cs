@@ -7,5 +7,6 @@ class Program
     static void Main(string[] args)
     {
         FilmFavorit_103022400034.ReadJSON();
+        Watchlist_103022400034.ReadJSON();
     }
 }

@@ -18,8 +18,8 @@ namespace Modul7_AyamIcikiwirCompany
         {
             string jsonString = File.ReadAllText("jurnal7_1_103022400034.json");
             var data = JsonSerializer.Deserialize<FilmFavorit_103022400034>(jsonString);
-            Console.WriteLine($"Judul : {data.title}\nDirector : {data.director}\nTahun : {data.year}\nGenre : {data.genre}\nRating : {data.rating}\nDurasi : {data.durationMinutes}\nStatus{data.isWatched}");
+            Console.WriteLine($"Judul : {data.title}\nDirector : {data.director}\nTahun : {data.year}" +
+                $"\nGenre : {data.genre}\nRating : {data.rating}\nDurasi : {data.durationMinutes}\nStatus{data.isWatched}");
         }
     }
-    
 }
